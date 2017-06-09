@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Maraphon
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Water\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=a\ b\ c
+comment1.target=Maraphon(int,\ int,\ int)
+comment2.params=sportsmen
+comment2.target=boolean\ doIt(team.Sportsmen)
+numComments=3
