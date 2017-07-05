@@ -21,16 +21,17 @@
 
 public class HW22{
 	public static void main(String[] args) {
-		
-		String name="1 3 1 2\n2 3 2 2\n5 6 7 1\n3 3 1 5 0";
-		try {
+		String name="1 3 1 2\n2 3 2 2\n5 6 7 1\n3 3 1 0";
+		try {      
 			Method(name);
-		} 	catch (ArrayIndexOutOfBoundsException ex) {
-            System.out.println(ex);
- 			}
+    	}   catch (ArrayIndexOutOfBoundsException ex) {
+          	  System.out.println(ex);
+    		}   catch (NumberFormatException em) {
+         	 		System.out.println(em);
+         	    }
 	}
-	public static void Method(String name) throws ArrayIndexOutOfBoundsException  {
-		
+
+	public static void Method(String name) throws ArrayIndexOutOfBoundsException,NumberFormatException  {
 		String[] oneDimArr = name.split("\n");
         String[][] twoDimArr = {
                 oneDimArr[0].split(" "),
@@ -38,15 +39,14 @@ public class HW22{
                 oneDimArr[2].split(" "),
                 oneDimArr[3].split(" "),
         };       
-	 int[][] myIntArray = new int[4][4];
+	 	int[][] myIntArray = new int[4][4];
         for (int i = 0; i < twoDimArr.length; i++) {
             for (int j = 0; j < twoDimArr[i].length; j++) {
-               try {
                 	myIntArray[i][j] = Integer.parseInt(twoDimArr[i][j]);
-                	 throw new ArrayIndexOutOfBoundsException("Razmer matrici ne raven 4x4");
-                } catch (ArrayIndexOutOfBoundsException ex) {
-					System.out.println(ex);
-				  }
+                	if (myIntArray[i][j]!=Integer.parseInt(twoDimArr[i][j]))
+               	     throw new ArrayIndexOutOfBoundsException("Razmer matrici ne raven 4x4");
+           			if (myIntArray[i][j]!=Integer.parseInt(twoDimArr[i][j]))
+                     throw new NumberFormatException("V yacheike matrici ne chislo");
             }
         }
         int result=0;
@@ -64,12 +64,6 @@ public class HW22{
             }
             System.out.println();
         }
-    
-		//abc=ccc;
-		//String ccc = new String [][];  
-		//for (int i = 0; i < 4; i++) {      
- 		//for (int j = 0; j < 4; j++) {
-
 	}
 
 }
